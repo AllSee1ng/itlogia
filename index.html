@@ -11,7 +11,7 @@
 <body>
 
   <div class="home__wrapper">
-
+    <div class="currency" title="Изменить валюту" id="changeCurrency">$</div>
 
     <header class="header">
       <div class="container">
@@ -21,13 +21,13 @@
         <nav class="menu">
           <ul class="menu__list">
             <li class="menu__item">
-              <a href="#" class="menu__link">Каталог</a>
+              <a data-goto="products" class="menu__link">Каталог</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">О нас</a>
+              <a data-goto="love" class="menu__link">О нас</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Оформление заказа</a>
+              <a data-goto="order" class="menu__link">Оформление заказа</a>
             </li>
           </ul>
       </div>
@@ -50,13 +50,13 @@
           </p>
           <img src="./img/cookie.png" alt="cookies" class="main-content__image">
           <div class="main-content__action">
-            <button class="btn">Заказать</button>
+            <button class="btn" id="mainOrderBtn">Заказать</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="products">
+    <section class="products" id="products">
       <img src="./img/line2.png" alt="line" class="line-2">
       <div class="container">
         <h2 class="section__title">Выберите печенье</h2>
@@ -74,7 +74,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">20 $</p>
+                  <p class="products__price" data-base-price="20">20 $</p>
                   <p class="products__weight">2 шт./ 200 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -93,7 +93,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">24 $</p>
+                  <p class="products__price" data-base-price="24">24 $</p>
                   <p class="products__weight">2 шт./ 200 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -112,7 +112,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">18 $</p>
+                  <p class="products__price" data-base-price="18">18 $</p>
                   <p class="products__weight">2 шт./ 200 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -130,7 +130,7 @@
                 и тёмной шоколадной стружкой, придающей богатую глубину вкуса. </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">24 $</p>
+                  <p class="products__price" data-base-price="24">24 $</p>
                   <p class="products__weight">2 шт./ 200 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -149,7 +149,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">20 $</p>
+                  <p class="products__price" data-base-price="20">20 $</p>
                   <p class="products__weight">2 шт./ 200 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -168,7 +168,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">18$</p>
+                  <p class="products__price" data-base-price="20">18$</p>
                   <p class="products__weight">2 шт./ 200 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -188,7 +188,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">36 $</p>
+                  <p class="products__price" data-base-price="36">36 $</p>
                   <p class="products__weight">4 шт./ 400 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -207,7 +207,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">33 $</p>
+                  <p class="products__price" data-base-price="33">33 $</p>
                   <p class="products__weight">4 шт./ 400 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -226,7 +226,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">38 $</p>
+                  <p class="products__price" data-base-price="38">38 $</p>
                   <p class="products__weight">4 шт./ 400 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -245,7 +245,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">33 $</p>
+                  <p class="products__price" data-base-price="33">33 $</p>
                   <p class="products__weight">4 шт./ 400 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -264,7 +264,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">39 $</p>
+                  <p class="products__price" data-base-price="39">39 $</p>
                   <p class="products__weight">4 шт./ 400 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -284,7 +284,7 @@
               </p>
               <div class="products__content-extra">
                 <div>
-                  <p class="products__price">35 $</p>
+                  <p class="products__price" data-base-price="35">35 $</p>
                   <p class="products__weight">4 шт./ 400 гр.</p>
                 </div>
                 <button class="btn btn--violet">Заказать</button>
@@ -295,7 +295,7 @@
       </div>
     </section>
 
-    <section class="love">
+    <section class="love" id="love">
       <div class="container">
         <h2 class="section__title">Пекарня с любовью</h2>
         <div class="love__wrapper">
@@ -316,7 +316,7 @@
       </div>
     </section>
 
-    <section class="order">
+    <section class="order" id="order">
       <img src="./img/line3.png" alt="line" class="line-3">
       <div class="container">
         <h2 class="section__title">Закажите печенье</h2>
@@ -329,10 +329,10 @@
               в мир сладких наслаждений.
             </h3>
             <form action="#" class="order__form">
-              <input type="text" placeholder="Шоколадный ореховый деликатес" class="order__form-input">
-              <input type="text" placeholder="Ваше имя" class="order__form-input">
-              <input type="text" placeholder="Ваш телефон" class="order__form-input">
-              <button class="btn btn--violet">Оформить заказ</button>
+              <input type="text" placeholder="Шоколадный ореховый деликатес" id="productName" class="order__form-input">
+              <input type="text" placeholder="Ваше имя" id="name" class="order__form-input">
+              <input type="text" placeholder="Ваш телефон" id="phone" class="order__form-input">
+              <button class="btn btn--violet" id="orderBtn">Оформить заказ</button>
             </form>
           </div>
 
@@ -352,6 +352,8 @@
 
   </div>
 
+
+  <script src="./scripts/main.js"></script>
 </body>
 
 </html>

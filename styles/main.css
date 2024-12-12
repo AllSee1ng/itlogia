@@ -170,6 +170,41 @@ body {
   background: #6d60ff;
 }
 
+.currency {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  border: 1px solid white;
+  padding: 4px 10px;
+  text-align: center;
+  height: 35px;
+  min-width: 40px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50px;
+  z-index: 1;
+  transform: scale(1);
+  line-height: 28px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
 .header {
   padding: 40px 0;
 }
@@ -197,6 +232,7 @@ body {
   font-size: 1rem;
   line-height: 130%;
   color: #fff;
+  cursor: pointer;
 }
 
 .menu__link:hover {
