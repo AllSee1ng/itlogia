@@ -66,12 +66,13 @@ document.getElementById("changeCurrency").addEventListener("click", event => {
   }
 });
 
-const orderForm = document.getElementById("order");
-const productName = orderForm.elements.productName;
-const name = orderForm.elements.name;
-const phone = orderForm.elements.phone;
+const productName = document.getElementById("productName");
+const name = document.getElementById("name");
+const phone = document.getElementById("phone");
 
-orderForm.addEventListener("submit", event => {
+const orderBtn = document.getElementById("orderBtn");
+
+orderBtn.addEventListener("click", event => {
   event.preventDefault();
 
   let hasError = false;
