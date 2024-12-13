@@ -1,0 +1,136 @@
+<div class="home__wrapper">
+  <div class="currency" title="Изменить валюту" id="changeCurrency" (click)="changeCurrency()">{{ currency }}</div>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="../assets/img/logo.svg" alt="Trendy Cookies" />
+      </div>
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a (click)="scrollTo(products)" class="menu__link">Каталог</a>
+          </li>
+          <li class="menu__item">
+            <a (click)="scrollTo(love)" class="menu__link">О нас</a>
+          </li>
+          <li class="menu__item">
+            <a (click)="scrollTo(order)" class="menu__link">Оформление заказа</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="main-content">
+    <div class="container">
+      <img src="../assets/img/line1.png" alt="line" class="line-1">
+      <div class="main-content__info">
+        <h1 class="main-content__title">
+          Магия вкуса в каждой крошке
+        </h1>
+        <p class="main-content__text">
+          Наши рецепты вдыхают жизнь в изысканность ингредиентов:
+          ароматное натуральное масло, свежие сливки, чистый мёд и
+          отборная мука. Мы тщательно отбираем каждый компонент премиального
+          печенья,
+          стремясь подарить вам истинное
+          кулинарное наслаждение.
+        </p>
+        <img src="../assets/img/cookie.png" alt="cookies" class="main-content__image">
+        <div class="main-content__action">
+          <button class="btn" id="mainOrderBtn" (click)="scrollTo(products)">Заказать</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="products" #products>
+    <img src="../assets/img/line2.png" alt="line" class="line-2">
+    <div class="container">
+      <h2 class="section__title">Выберите печенье</h2>
+      <div class="products__wrapper">
+        <div class="products__item" *ngFor="let product of productsData">
+          <div class="products__image">
+            <img src="../assets/img/{{ product.image }}" alt="cookie">
+          </div>
+          <div class="products__content">
+            <h3 class="products__title">{{ product.title }}</h3>
+            <p class="products__text">
+              {{ product.text }}
+            </p>
+            <div class="products__content-extra">
+              <div>
+                <p class="products__price">{{product.price}} {{ currency }}</p>
+                <p class="products__weight">{{ product.weight }}</p>
+              </div>
+              <button class="btn btn--violet" (click)="scrollTo(order, product)">Заказать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="love" id="love" #love>
+    <div class="container">
+      <h2 class="section__title">Пекарня с любовью</h2>
+      <div class="love__wrapper">
+        <div class="love__info">
+          <h3 class="love__title">
+            Приготовлено с заботой, чтобы радовать вас каждый день
+          </h3>
+          <p class="love__text">
+            Мы с гордостью представляем наше печенье, которое мы выпекаем вручную каждый день
+            с 1995 года, используя только лучшие ингредиенты. Погрузитесь в мир изысканных лакомств, приготовленных
+            с применением передовых технологий, и насладитесь их неповторимым вкусом.
+          </p>
+        </div>
+        <div class="love__image">
+          <img src="../assets/img/love.png" alt="cookie">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="order" #order>
+    <img src="../assets/img/line3.png" alt="line" class="line-3">
+    <div class="container">
+      <h2 class="section__title">Закажите печенье</h2>
+      <img src="../assets/img/breadcrumbs.png" alt="breadcrumbs" class="order__bg-img">
+      <div class=" order__wrapper">
+
+        <div class="order__form-wrapper">
+          <h3 class="order__form-title">
+            Откройте для себя волшебство вкуса с нашим премиальным печеньем! Закажите прямо сейчас и окунитесь
+            в мир сладких наслаждений.
+          </h3>
+          <form action="#" class="order__form" [formGroup]="form">
+            <input type="text" placeholder="Шоколадный ореховый деликатес" id="productName" class="order__form-input"
+              formControlName="productName"
+              [class]="{'error': form.get('productName')?.invalid && (form.get('productName')?.dirty || form.get('productName')?.touched) }"
+              readonly>
+            <input type="text" placeholder="Ваше имя" id="name" class="order__form-input" formControlName="name"
+              [class]="{'error': form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched) }">
+            <input type="text" placeholder="Ваш телефон" id="phone" class="order__form-input" formControlName="phone"
+              [class]="{'error': form.get('phone')?.invalid && (form.get('phone')?.dirty || form.get('phone')?.touched) }">
+            <button class="btn btn--violet" id="orderBtn" (click)="confirmOrder()" [disabled]="!form.valid">Оформить
+              заказ</button>
+          </form>
+        </div>
+
+        <div class="order__image">
+          <img src="../assets/img/order.png" alt="cookie">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="logo">
+      <img src="../assets/img/logo.svg" alt="Trendy cookies">
+    </div>
+    <p class="rights">«Все права защищены»</p>
+  </footer>
+
+</div>
